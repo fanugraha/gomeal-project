@@ -1,0 +1,36 @@
+.Sidebar {
+  background-color: white;
+  height: 100vh;
+  position: fixed;
+}
+
+.Navigation li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  padding: 16px 24px 16px 24px;
+  width: 252px;
+}
+
+.Navigation li a {
+  text-decoration: none;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  color: var(--color-white, #a098ae);
+  text-align: left;
+  font: var(--text-text-medium-1, 500 18px "Poppins", sans-serif);
+}
+
+.Logo {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+.Navigation {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}

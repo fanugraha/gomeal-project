@@ -1,0 +1,20 @@
+.SearchBar {
+  background: var(--color-white, #ffffff);
+  border-radius: 16px;
+  padding: 2px 32px 2px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 400pxpx;
+  height: 50px;
+}
+
+.SearchBar input {
+  width: 400px;
+  height: 50px;
+  border: none;
+  color: var(--color-gray-1, #a098ae);
+  text-align: left;
+  font: var(--text-text-regular-1, 400 18px "Poppins", sans-serif);
+}

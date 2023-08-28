@@ -1,0 +1,35 @@
+.BtnActive {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: var(--color-yellow, #f8b602);
+  border-radius: 16px;
+  padding: 16px 24px 16px 24px;
+  width: 252px;
+  height: 64px;
+}
+
+.TextSidebarActive {
+  color: var(--color-white, #ffffff);
+  text-align: left;
+  font: var(--text-text-medium-1, 500 18px "Poppins", sans-serif);
+  margin: 0;
+}
+
+.TextSidebarUnactive {
+  color: var(--color-gray-1, #a098ae);
+  text-align: left;
+  font: var(--text-text-medium-1, 500 18px "Poppins", sans-serif);
+  margin: 0;
+}
+
+.BtnUnActive {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  gap: 24px;
+  border-radius: 16px;
+  padding: 16px 24px 16px 24px;
+  width: 252px;
+  height: 64px;
+}
