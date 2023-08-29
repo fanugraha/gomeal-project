@@ -4,9 +4,8 @@
 }
 
 .Content {
-  margin-left: 300px !important;
+  margin-left: 250px !important;
   width: 100%;
-  margin-right: 100px;
   gap: 40px;
   display: flex;
   flex-direction: column;
@@ -36,7 +35,7 @@ h1 {
   gap: 30px;
 }
 
-.LoginBtn {
+.SearchBtn {
   background: #f8b602 !important;
   border-radius: 16px;
   width: 150px;

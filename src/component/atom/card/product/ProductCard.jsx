@@ -1,15 +1,15 @@
 import "./ProductCardstyle.css";
 
-const ProductCard = () => {
+const ProductCard = ({ item }) => {
   return (
-    <div className="ProductCard">
-      <img src="src\assets\image\sample.png" alt="" />
-      <p className="TextProduct">xxxx</p>
-      <p className="PriceProduct">
-        <span>$</span>5.5
-      </p>
+    <button className="ProductCard">
+      <div className="ImageWrapper">
+        <img src={item?.imageUrl} alt="" />
+      </div>
+      <p className="TextProduct">{item?.name}</p>
+      <p className="PriceProduct">{item?.priceFormatted}</p>
       <p className="Distance">4.97 km - 21 min</p>
-    </div>
+    </button>
   );
 };
 

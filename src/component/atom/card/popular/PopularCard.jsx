@@ -3,7 +3,7 @@ import "./Popularstyle.css";
 
 const PopularCard = ({ item }) => {
   return (
-    <div className="PopularCard" key={item?.id}>
+    <div className="PopularCard">
       <div className="ImageWrapper">
         <div className="PromoProduct">
           <p className="TextPomo">15% off</p>
@@ -17,10 +17,7 @@ const PopularCard = ({ item }) => {
       <div className="CardBody">
         <div className="LeftBody">
           <p className="TextFood">{item?.name}</p>
-          <div className="Price">
-            <span>$</span>
-            {item?.priceFormatted}
-          </div>
+          <div className="Price">{item?.priceFormatted}</div>
         </div>
         <div className="RightBody">
           <Button className="BtnPopularCard">

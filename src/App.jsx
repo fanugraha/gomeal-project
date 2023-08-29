@@ -2,21 +2,29 @@ import { MantineProvider } from "@mantine/core";
 import Homepage from "./pages/homepage/Homepage";
 import ProductPage from "./pages/product page/ProductPage";
 import { useRoutes } from "react-router";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Link,
-} from "react-router-dom";
+import AuthPage from "./pages/auth page/AuthPage";
+import ProtectedRoute from "./routes/ProtectedRoutes";
 
 const routes = [
   {
     path: "/",
-    element: <Homepage />,
+    element: (
+      <ProtectedRoute>
+        <Homepage />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/products",
-    element: <ProductPage />,
+    element: (
+      <ProtectedRoute>
+        <ProductPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/auth",
+    element: <AuthPage />,
   },
 ];
 

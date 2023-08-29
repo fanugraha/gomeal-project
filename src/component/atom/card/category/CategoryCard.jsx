@@ -1,8 +1,7 @@
 import React from "react";
 import "./Category.css";
 
-const CategoryCard = (props) => {
-  const { item } = props;
+const CategoryCard = ({ item }) => {
   return (
     <button className="CategoryCard">
       <img src={item.img} alt="" />

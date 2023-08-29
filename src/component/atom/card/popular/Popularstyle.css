@@ -11,15 +11,16 @@
 }
 
 .ImageWrapper {
-  justify-content: center;
   width: 272px;
-  height: 180;
-  border-radius: 10px;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .ImageWrapper img {
-  width: 272px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   border-radius: 16px;
 }
 
@@ -51,11 +52,6 @@
   margin: 0;
 }
 
-.Price span {
-  color: var(--color-yellow, #f8b602);
-  font: var(--heading-heading-3, 700 24px "Poppins", sans-serif);
-}
-
 .CardBody {
   display: flex;
   align-items: center;
@@ -64,7 +60,7 @@
 }
 
 .BtnPopularCard {
-  background: var(--color-yellow, #f8b602);
+  background: var(--color-yellow, #f8b602) !important;
   border-radius: 8px;
   width: 55px;
   height: 55px;

@@ -1,0 +1,72 @@
+.Card {
+  width: 500px;
+  height: 600px;
+  gap: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  background-color: white;
+}
+
+.TitleAuth {
+  color: #363636;
+  text-align: left;
+  font: 400 30px "Rubik", sans-serif;
+  margin: 0;
+}
+
+.Label {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 365px;
+  gap: 12px;
+}
+
+.ParagraphAuth {
+  color: #454545;
+  text-align: left;
+  font: 300 16px "Rubik", sans-serif;
+  margin: 0;
+}
+
+.WrapperInput {
+  width: 365px;
+  gap: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.LabelInput {
+  color: #454545;
+  text-align: left;
+  font: 300 16px "Rubik", sans-serif;
+  margin: 0;
+}
+
+.SocialMedia {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.ParagraphAuth span a {
+  color: #454545;
+  text-align: left;
+  font: 600 16px "Rubik", sans-serif;
+  text-decoration: none;
+}
+
+.LoginBtn {
+  background-color: #f8b602 !important;
+  width: 365px !important;
+  font: 600 16px "Rubik", sans-serif;
+  height: 50px;
+}
