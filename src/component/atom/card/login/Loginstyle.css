@@ -12,6 +12,20 @@
   background-color: white;
 }
 
+.CardRegister {
+  width: 500px;
+  height: 700px;
+  gap: 20px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  backdrop-filter: blur(12px);
+  background-color: white;
+}
+
 .TitleAuth {
   color: #363636;
   text-align: left;
@@ -69,4 +83,13 @@
   width: 365px !important;
   font: 600 16px "Rubik", sans-serif;
   height: 50px;
+}
+
+.BtnModal {
+  background-color: #f8b602 !important;
+}
+
+.WrapperBtnModal {
+  display: flex;
+  justify-content: end;
 }

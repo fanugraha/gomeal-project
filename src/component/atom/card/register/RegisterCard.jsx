@@ -1,56 +1,96 @@
-import { Button, Input } from "@mantine/core";
+import { Button, Modal, Input } from "@mantine/core";
 import { PasswordInput } from "@mantine/core";
 import axios from "axios";
 import { useState } from "react";
+import { IconChevronDown } from "@tabler/icons-react";
+import { useDisclosure } from "@mantine/hooks";
 
 function RegisterCard({ handleLogin }) {
-  // Value Input
-  const [emailRegister, setEmailRegister] = useState("");
-  const [passwordRegister, setPasswrodRegister] = useState("");
+  const [name, setName] = useState("");
+  const [userName, setUserName] = useState("");
+  const [passwordRegister, setPasswordRegister] = useState("");
+  const [role, setRole] = useState();
 
-  // Post Api
-  const postApiRegister = () => {
+  // Modal
+  const [opened, { open, close }] = useDisclosure(false);
+
+  const handleSumbitRegister = () => {
     axios
       .post("https://api.mudoapi.tech/register", {
-        username: emailRegister,
+        name,
+        roleId: parseInt(role),
+        username: userName,
         password: passwordRegister,
       })
-      .then((ress) => {
-        console.log("Berhasil", ress);
+      .then(() => {
+        open();
       })
-      .catch((err) => {
-        console.log("Gagal", err);
-      });
+      .catch((err) => console.log("Gagal", err));
   };
 
   return (
     <div className="container">
-      <div className="Card">
+      <div className="CardRegister">
         <div className="Label">
-          <h1 className="TitleAuth">Please Register First</h1>
-          <p className="ParagraphAuth">Please enter your details below</p>
+          <h1 className="TitleAuth">Please register first</h1>
+          <p className="ParagraphAuth">Enter your details below</p>
+        </div>
+        <div className="WrapperInput">
+          <p className="LabelInput">Name</p>
+          <Input
+            placeholder="Input your name"
+            className="Input"
+            onChange={(event) => setName(event.target.value)}
+          />
+        </div>
+        <div className="WrapperInput">
+          <p className="LabelInput">Role Id</p>
+          <Input
+            value={role}
+            onChange={(event) => setRole(parseInt(event.target.value))}
+            component="select"
+            rightSection={<IconChevronDown size={14} stroke={1.5} />}
+          >
+            <option value={1}>Admin</option>
+            <option value={2}>Employee</option>
+          </Input>
         </div>
         <div className="WrapperInput">
           <p className="LabelInput">Email</p>
           <Input
             placeholder="Enter your email"
             className="Input"
-            onChange={(event) => {
-              setEmailRegister(event.target.value);
-            }}
+            onChange={(event) => setUserName(event.target.value)}
           />
         </div>
         <div className="WrapperInput">
           <p className="LabelInput">Password</p>
           <PasswordInput
             placeholder="Create your Password"
-            onChange={(event) => {
-              setPasswrodRegister(event.target.value);
-            }}
+            onChange={(event) => setPasswordRegister(event.target.value)}
           />
         </div>
         <p className="ParagraphAuth">or register with</p>
-        <Button onClick={postApiRegister} className="LoginBtn">
+        <Modal
+          opened={opened}
+          onClose={close}
+          title="Registration Successful!"
+          centered
+        >
+          <p>To proceed with your food order, please log in to your account!</p>
+          <div className="WrapperBtnModal">
+            <Button onClick={handleLogin} className="BtnModal">
+              Login
+            </Button>
+          </div>
+        </Modal>
+        <Button
+          className="LoginBtn"
+          onClick={() => {
+            open();
+            handleSumbitRegister();
+          }}
+        >
           Register
         </Button>
         <div className="SocialMedia">
@@ -59,7 +99,7 @@ function RegisterCard({ handleLogin }) {
           <img src="src\assets\image\facebook.png" alt="" />
         </div>
         <p className="ParagraphAuth">
-          Have acount?{" "}
+          Have account?{" "}
           <span>
             <a href="#" onClick={handleLogin}>
               Login
