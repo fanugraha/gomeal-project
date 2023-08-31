@@ -1,10 +1,16 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button, Modal } from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
 import LoginCard from "../../component/atom/card/login/LoginCard";
 import RegisterCard from "../../component/atom/card/register/RegisterCard";
+import "./Authstyle.css";
 
 const AuthPage = () => {
-  // Mengatur Default tampilan Auth
   const [authType, setAuthType] = useState(true);
+  const [errorVisible, setErrorVisible] = useState(false); // Error state
+
+  // Modaleorror
+  const [opened, { open, close }] = useDisclosure(false);
 
   const handleLogin = () => {
     setAuthType(true);
@@ -14,10 +20,32 @@ const AuthPage = () => {
     setAuthType(false);
   };
 
+  const openError = () => {
+    setErrorVisible(true);
+    open(); // Open the error modal
+  };
+
   return (
-    <div>
+    <div className="container-fluid AuthPage">
+      {errorVisible && (
+        <Modal
+          opened={opened}
+          onClose={close}
+          title="Oops an error occurred"
+          centered
+        >
+          <p>Please fill in the data correctly</p>
+          <div className="WrapperBtnModal">
+            <Button onClick={close} className="BtnModal">
+              Close
+            </Button>
+          </div>
+        </Modal>
+      )}
       {authType === true && <LoginCard handleRegister={handleRegister} />}
-      {authType === false && <RegisterCard handleLogin={handleLogin} />}
+      {authType === false && (
+        <RegisterCard handleLogin={handleLogin} openError={openError} />
+      )}
     </div>
   );
 };

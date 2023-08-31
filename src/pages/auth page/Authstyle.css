@@ -1,0 +1,8 @@
+.AuthPage {
+  background-color: #f8b602;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -26,7 +26,6 @@ function LoginCard({ handleRegister }) {
     axios
       .post("https://api.mudoapi.tech/login", payload)
       .then((res) => {
-        console.log("Berhasil", res);
         localStorage.setItem("token", res?.data?.data?.token);
         navigate("/");
       })
@@ -36,65 +35,63 @@ function LoginCard({ handleRegister }) {
   };
 
   return (
-    <div className="container">
-      <div className="Card">
-        <div className="Label">
-          <h1 className="TitleAuth">Sign in to order your meal</h1>
-          <p className="ParagraphAuth">Please enter your details below</p>
-        </div>
-        <div className="WrapperInput">
-          <p className="LabelInput">Email</p>
-          <Input
-            placeholder="Enter your email"
-            className="Input"
-            onChange={(event) => {
-              setEmailLogin(event.target.value);
-            }}
-          />
-        </div>
-        <div className="WrapperInput">
-          <p className="LabelInput">Password</p>
-          <PasswordInput
-            placeholder="Enter your Password"
-            onChange={(event) => {
-              setPasswordLogin(event.target.value);
-            }}
-          />
-        </div>
-        <p className="ParagraphAuth">or continue with</p>
-        <Modal
-          opened={opened}
-          onClose={close}
-          title="Upss! user not found"
-          centered
-        >
-          <p>
-            We're sorry, but it seems that we couldn't locate the user
-            information.
-          </p>
-          <div className="WrapperBtnModal">
-            <Button onClick={handleRegister} className="BtnModal">
-              Register
-            </Button>
-          </div>
-        </Modal>
-        <Button className="LoginBtn" onClick={handleSumbitLogin}>
-          Login
-        </Button>
-        <div className="SocialMedia">
-          <img src="src\assets\image\aplelogo.png" alt="" />
-          <img src="src\assets\image\google.png" alt="" />
-          <img src="src\assets\image\facebook.png" alt="" />
-        </div>
-        <p className="ParagraphAuth">
-          Dont have acount?{" "}
-          <span>
-            <a href="#" onClick={handleRegister}>
-              Register
-            </a>
-          </span>
-        </p>
+    <div className="Card">
+      <div className="Label">
+        <h1 className="TitleAuth">Sign in to order your meal</h1>
+        <p className="ParagraphAuth">Please enter your details below</p>
       </div>
+      <div className="WrapperInput">
+        <p className="LabelInput">Email</p>
+        <Input
+          placeholder="Enter your email"
+          className="Input"
+          onChange={(event) => {
+            setEmailLogin(event.target.value);
+          }}
+        />
+      </div>
+      <div className="WrapperInput">
+        <p className="LabelInput">Password</p>
+        <PasswordInput
+          placeholder="Enter your Password"
+          onChange={(event) => {
+            setPasswordLogin(event.target.value);
+          }}
+        />
+      </div>
+      <p className="ParagraphAuth">or continue with</p>
+      <Modal
+        opened={opened}
+        onClose={close}
+        title="Upss! user not found"
+        centered
+      >
+        <p>
+          We're sorry, but it seems that we couldn't locate the user
+          information.
+        </p>
+        <div className="WrapperBtnModal">
+          <Button onClick={handleRegister} className="BtnModal">
+            Register
+          </Button>
+        </div>
+      </Modal>
+      <Button className="LoginBtn" onClick={handleSumbitLogin}>
+        Login
+      </Button>
+      <div className="SocialMedia">
+        <img src="src\assets\image\aplelogo.png" alt="" />
+        <img src="src\assets\image\google.png" alt="" />
+        <img src="src\assets\image\facebook.png" alt="" />
+      </div>
+      <p className="ParagraphAuth">
+        Dont have acount?{" "}
+        <span>
+          <a href="#" onClick={handleRegister}>
+            Register
+          </a>
+        </span>
+      </p>
     </div>
   );
 }
