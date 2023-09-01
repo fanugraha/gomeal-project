@@ -4,6 +4,7 @@ import ProductPage from "./pages/product page/ProductPage";
 import { useRoutes } from "react-router";
 import AuthPage from "./pages/auth page/AuthPage";
 import ProtectedRoute from "./routes/ProtectedRoutes";
+import SearchPage from "./pages/searchpage/SearchPage";
 
 const routes = [
   {
@@ -19,6 +20,14 @@ const routes = [
     element: (
       <ProtectedRoute>
         <ProductPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/search",
+    element: (
+      <ProtectedRoute>
+        <SearchPage />
       </ProtectedRoute>
     ),
   },

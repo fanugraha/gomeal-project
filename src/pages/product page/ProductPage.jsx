@@ -5,14 +5,25 @@ import PromoCarousel from "../../component/section/Promo Carousel/PromoCarousel"
 import "./ProductPagestyle.css";
 import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import { Button } from "@mantine/core";
-import React, { useState } from "react";
+import { useNavigate } from "react-router";
+import { useState } from "react";
 
 const ProductPage = () => {
+  const navigate = useNavigate();
+
+  // Ambil input user
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (searchValue) => {
-    setSearchTerm(searchValue);
+  // Tangkap inputan user
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   };
+
+  // HandleClick
+  const handleClick = () => {
+    navigate(`/seach?term=${searchTerm}`);
+  };
+
   return (
     <div className="container ProductPage">
       <Sidebar />
@@ -20,8 +31,10 @@ const ProductPage = () => {
         <div className="Header">
           <h1 className="HeadlineText">Hello, There</h1>
           <div className="UserInput">
-            <SearchBar searchTerm={searchTerm} filter={handleSearch} />
-            <Button className="SearchBtn">Cari Menu</Button>
+            <SearchBar handleSearch={handleSearch} />
+            <Button onClick={handleClick} className="SearchBtn">
+              Cari Menu
+            </Button>
           </div>
         </div>
         <PromoCarousel />

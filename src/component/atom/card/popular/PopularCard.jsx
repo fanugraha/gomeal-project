@@ -1,9 +1,9 @@
-import { Button } from "@mantine/core";
+import { Button, Card } from "@mantine/core";
 import "./Popularstyle.css";
 
 const PopularCard = ({ item }) => {
   return (
-    <div className="PopularCard">
+    <Card className=" PopularCard">
       <div className="ImageWrapper">
         <div className="PromoProduct">
           <p className="TextPomo">15% off</p>
@@ -25,7 +25,7 @@ const PopularCard = ({ item }) => {
           </Button>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

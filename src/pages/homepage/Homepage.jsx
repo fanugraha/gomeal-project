@@ -8,14 +8,26 @@ import CategorySection from "../../component/section/Category Section/CategorySe
 import PromoCarousel from "../../component/section/Promo Carousel/PromoCarousel";
 import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import { Button } from "@mantine/core";
+import { useNavigate } from "react-router-dom";
 
 const Homepage = () => {
+  const navigate = useNavigate();
+  // Ambil inputan user
   const [searchTerm, setSearchTerm] = useState("");
 
-  const handleSearch = (searchValue) => {
-    setSearchTerm(searchValue);
+  // Menangkap input user kedalam state
+  const handleSearch = (event) => {
+    setSearchTerm(event.target.value);
   };
 
+  console.log(searchTerm);
+  // handleClick
+  const handleClick = () => {
+    // Navigasi ke halaman '/search' dengan mengirim searchTerm sebagai parameter URL
+    navigate(`/search?menu=${searchTerm}`);
+  };
+
+  console.log(searchTerm);
   return (
     <div className="container Homepage">
       <Sidebar />
@@ -23,8 +35,10 @@ const Homepage = () => {
         <div className="Header">
           <h1 className="HeadlineText">Hello, There</h1>
           <div className="UserInput">
-            <SearchBar searchTerm={searchTerm} filter={handleSearch} />
-            <Button className="SearchBtn">Cari Menu</Button>
+            <SearchBar handleSearch={handleSearch} />
+            <Button onClick={handleClick} className="SearchBtn">
+              Cari Menu
+            </Button>
           </div>
         </div>
         <PromoCarousel />

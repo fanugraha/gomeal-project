@@ -1,11 +1,12 @@
 import CategoryCard from "../../atom/card/category/CategoryCard";
 import DataCategory from "./DataCategory";
+import "./Categorystyle.css";
 
 const CategorySection = () => {
   return (
     <div className="Category">
       <h1 className="Headline">Category</h1>
-      <div className="WrapperCategory">
+      <div className="WrapperCategori">
         {DataCategory.map((item) => (
           <CategoryCard key={item.title} item={item} />
         ))}

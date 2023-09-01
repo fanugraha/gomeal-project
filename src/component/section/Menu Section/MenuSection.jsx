@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ProductCard from "../../atom/card/product/ProductCard";
 import axios from "axios";
-import "./MenuSectionstyle.css";
 
 const MenuSection = ({ deskripsi }) => {
   // Menyimpan API

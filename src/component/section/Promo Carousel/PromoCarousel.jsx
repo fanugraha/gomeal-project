@@ -1,7 +1,9 @@
+import { Image } from "@mantine/core";
+
 const PromoCatousel = () => {
   return (
     <div className="Promo">
-      <img src="src\assets\image\promo.png" alt="" />
+      <Image src="src\assets\image\promo.png" alt="" />
     </div>
   );
 };
