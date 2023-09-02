@@ -20,14 +20,12 @@ const Homepage = () => {
     setSearchTerm(event.target.value);
   };
 
-  console.log(searchTerm);
   // handleClick
   const handleClick = () => {
     // Navigasi ke halaman '/search' dengan mengirim searchTerm sebagai parameter URL
-    navigate(`/search?menu=${searchTerm}`);
+    navigate(`/products?menu=${searchTerm}`);
   };
 
-  console.log(searchTerm);
   return (
     <div className="container Homepage">
       <Sidebar />

@@ -1,9 +1,9 @@
 import React from "react";
 import "./Category.css";
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({ item, handleCategory }) => {
   return (
-    <button className="CategoryCard">
+    <button onClick={handleCategory} className="CategoryCard">
       <img src={item.img} alt="" />
       <p className="TextCategory">{item.title}</p>
     </button>
