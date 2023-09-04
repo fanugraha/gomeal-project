@@ -23,11 +23,13 @@ const PromoSection = () => {
     getApiProduct();
   }, []);
 
+  // Tampilkan 3 produk saja
+  const popularProducts = product.slice(0, 3);
   return (
     <div className="Product">
       <h1 className="Headline">What would you like to eat today?</h1>
       <div className="WrapperProduct">
-        {product.map((item) => (
+        {popularProducts.map((item) => (
           <PopularCard key={item?.id} item={item} />
         ))}
       </div>

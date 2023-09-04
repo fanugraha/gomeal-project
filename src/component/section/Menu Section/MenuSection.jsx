@@ -9,7 +9,9 @@ const MenuSection = ({ deskripsi, type }) => {
   //Fungsi untuk mengambil data dari API
   const getApiMenu = (type) => {
     axios
-      .get("https://api.mudoapi.tech/menus", { params: { type } })
+      .get("https://api.mudoapi.tech/menus?perPage=12&page=1", {
+        params: { type },
+      })
       .then((res) => {
         setMenu(res?.data.data.Data);
       })
