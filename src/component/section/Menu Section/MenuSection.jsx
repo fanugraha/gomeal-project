@@ -2,14 +2,14 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../../atom/card/product/ProductCard";
 import axios from "axios";
 
-const MenuSection = ({ deskripsi }) => {
+const MenuSection = ({ deskripsi, type }) => {
   // Menyimpan API
   const [menu, setMenu] = useState([]);
 
   //Fungsi untuk mengambil data dari API
-  const getApiMenu = () => {
+  const getApiMenu = (type) => {
     axios
-      .get("https://api.mudoapi.tech/menus")
+      .get("https://api.mudoapi.tech/menus", { params: { type } })
       .then((res) => {
         setMenu(res?.data.data.Data);
       })
@@ -19,8 +19,8 @@ const MenuSection = ({ deskripsi }) => {
   };
 
   useEffect(() => {
-    getApiMenu();
-  }, []);
+    getApiMenu(type);
+  }, [type]);
 
   return (
     <div className="Product">

@@ -8,11 +8,13 @@ import PromoCarousel from "../../component/section/Promo Carousel/PromoCarousel"
 import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import { Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
+import CategorySection from "../../component/section/Category Section/CategorySection";
 
 const Homepage = () => {
   const navigate = useNavigate();
   // Ambil inputan user
   const [searchTerm, setSearchTerm] = useState("");
+  const [category, setCategory] = useState("");
 
   // Menangkap input user kedalam state
   const handleSearch = (event) => {
@@ -23,6 +25,11 @@ const Homepage = () => {
   const handleClick = () => {
     // Navigasi ke halaman '/search' dengan mengirim searchTerm sebagai parameter URL
     navigate(`/products?menu=${searchTerm}`);
+  };
+
+  // handlecategiry
+  const handleCategory = (beverage) => {
+    setCategory(beverage);
   };
 
   return (
@@ -40,7 +47,11 @@ const Homepage = () => {
         </div>
         <PromoCarousel />
         <PromoSection />
-        <MenuSection deskripsi="Hungry? Our Menus Have You Covered!" />
+        <CategorySection onCategoryChange={handleCategory} />
+        <MenuSection
+          type={category}
+          deskripsi="Hungry? Our Menus Have You Covered!"
+        />
       </div>
     </div>
   );
