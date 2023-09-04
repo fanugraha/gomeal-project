@@ -38,7 +38,7 @@ const ProductPage = () => {
   // Get Api Produk
   const searchMenu = (searchTerm) => {
     axios
-      .get("https://api.mudoapi.tech/menus?name=&type" + searchTerm)
+      .get("https://api.mudoapi.tech/menus?name=" + searchTerm)
       .then((response) => {
         setSearchResults(response?.data.data.Data);
         setLoading(false);
