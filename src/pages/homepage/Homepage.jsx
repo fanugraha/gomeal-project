@@ -4,7 +4,6 @@ import "./Homepagestyle.css";
 import PromoSection from "../../component/section/Promo Section/PromoSection";
 import "bootstrap/dist/css/bootstrap.min.css";
 import MenuSection from "../../component/section/Menu Section/MenuSection";
-import CategorySection from "../../component/section/Category Section/CategorySection";
 import PromoCarousel from "../../component/section/Promo Carousel/PromoCarousel";
 import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import { Button } from "@mantine/core";
@@ -40,7 +39,6 @@ const Homepage = () => {
           </div>
         </div>
         <PromoCarousel />
-        <CategorySection />
         <PromoSection />
         <MenuSection deskripsi="Hungry? Our Menus Have You Covered!" />
       </div>
