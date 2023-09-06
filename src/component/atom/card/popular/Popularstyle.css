@@ -30,6 +30,7 @@
   justify-content: start;
   width: 280px;
   margin-top: 24px;
+  gap: 4px;
 }
 
 .TextRating {

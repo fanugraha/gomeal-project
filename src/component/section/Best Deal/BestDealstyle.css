@@ -1,0 +1,54 @@
+.Deal {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 0;
+}
+
+.DealCard {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.DealTitle {
+  color: #363636;
+  text-align: left;
+  font: 700 36px/112% "Lato", sans-serif;
+  position: relative;
+  width: 340px;
+}
+
+.DealParagraph {
+  color: rgba(54, 54, 54, 0.8);
+  text-align: left;
+  font: 500 20px/150% "Lato", sans-serif;
+  width: 340px;
+}
+
+.LeftCard {
+  padding: 46px;
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  gap: 14px;
+}
+
+.RightCard {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.RightCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}

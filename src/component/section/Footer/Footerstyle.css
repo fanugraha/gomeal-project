@@ -1,0 +1,19 @@
+.FoterContent {
+  width: 100%;
+  height: 250px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("src/assets/image/footerimg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.HeadlineFooter {
+  font: 900 36px/97.5% "Lato", sans-serif;
+  color: white;
+  width: 400px;
+  text-align: center;
+}

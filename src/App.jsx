@@ -4,6 +4,7 @@ import ProductPage from "./pages/product page/ProductPage";
 import { useRoutes } from "react-router";
 import AuthPage from "./pages/auth page/AuthPage";
 import ProtectedRoute from "./routes/ProtectedRoutes";
+import DetailPage from "./pages/detail page/DetailPage";
 
 const routes = [
   {
@@ -19,6 +20,14 @@ const routes = [
     element: (
       <ProtectedRoute>
         <ProductPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/products/:id",
+    element: (
+      <ProtectedRoute>
+        <DetailPage />
       </ProtectedRoute>
     ),
   },

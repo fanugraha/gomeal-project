@@ -1,6 +1,7 @@
 .Homepage {
   display: flex;
   width: 100%;
+  padding: 0;
 }
 
 .Content {
@@ -9,6 +10,8 @@
   gap: 40px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1 {
