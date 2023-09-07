@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import ProductCard from "../../atom/card/product/ProductCard";
 import axios from "axios";
 
-const MenuSection = ({ deskripsi, type }) => {
+const MenuSection = ({ deskripsi, type, onDetailChange }) => {
   // Menyimpan API
   const [menu, setMenu] = useState([]);
 
@@ -20,6 +20,11 @@ const MenuSection = ({ deskripsi, type }) => {
       });
   };
 
+  const handleDetail = (id) => {
+    onDetailChange(id);
+    console.log(id);
+  };
+
   useEffect(() => {
     getApiMenu(type);
   }, [type]);
@@ -29,7 +34,11 @@ const MenuSection = ({ deskripsi, type }) => {
       <h1 className="Headline">{deskripsi}</h1>
       <div className="WrapperProduct">
         {menu.map((item) => (
-          <ProductCard key={item.id} item={item} />
+          <ProductCard
+            onDetail={() => handleDetail(item.id)}
+            key={item.id}
+            item={item}
+          />
         ))}
       </div>
     </div>

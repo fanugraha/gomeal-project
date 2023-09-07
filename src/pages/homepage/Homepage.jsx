@@ -34,6 +34,11 @@ const Homepage = () => {
     setCategory(event);
   };
 
+  // detailProduct
+  const navigateDetail = (id) => {
+    navigate(`/products/${id}`);
+  };
+
   return (
     <div className="container Homepage">
       <Sidebar />
@@ -53,6 +58,7 @@ const Homepage = () => {
         <MenuSection
           type={category}
           deskripsi="Hungry? Our Menus Have You Covered!"
+          onDetailChange={navigateDetail}
         />
         <BestDeal />
         <Footer />

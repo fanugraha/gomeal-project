@@ -1,8 +1,8 @@
 import "./ProductCardstyle.css";
 
-const ProductCard = ({ item }) => {
+const ProductCard = ({ item, onDetail }) => {
   return (
-    <button className="ProductCard">
+    <button onClick={onDetail} className="ProductCard">
       <div className="ImageWrapper">
         <img src={item?.imageUrl} alt="" />
       </div>

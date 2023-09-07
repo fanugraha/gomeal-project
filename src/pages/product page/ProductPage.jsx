@@ -14,8 +14,27 @@ const ProductPage = () => {
   // useState
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [isSearching, setIsSearching] = useState(false);
   const [search, setSearch] = useState(searchParams.get("menu"));
+  const [currentPage, setCurrentPage] = useState(1);
+  const [nextPage, setNextPage] = useState(1);
+
+  // Get Api Produk
+  const searchMenu = (name = searchParams.get("menu")) => {
+    setLoading(true);
+    axios
+      .get(`https://api.mudoapi.tech/menus?perPage=6&page=${currentPage}`, {
+        params: { name: name },
+      })
+      .then((response) => {
+        setSearchResults(response?.data.data.Data);
+        setLoading(false);
+        setCurrentPage(response?.data?.data?.currentPage);
+        setNextPage(response?.data?.data?.nextPage);
+      })
+      .catch(() => {
+        setLoading(false);
+      });
+  };
 
   // Tangkap inputan user
   const handleSearch = (event) => {
@@ -28,28 +47,9 @@ const ProductPage = () => {
     searchMenu(search);
   };
 
-  // Get Api Produk
-  const searchMenu = (name = searchParams.get("menu")) => {
-    setLoading(true);
-    axios
-      .get(`https://api.mudoapi.tech/menus?perPage=12&page=1`, {
-        params: { name: name },
-      })
-      .then((response) => {
-        setSearchResults(response?.data.data.Data);
-        setLoading(false);
-        setIsSearching(true);
-        console.log(searchResults);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  };
-
   useEffect(() => {
     searchMenu();
-  }, []);
+  }, [currentPage]);
 
   return (
     <div className="container ProductPage">
@@ -76,6 +76,42 @@ const ProductPage = () => {
             searchResults.map((item) => (
               <ProductCard key={item?.id} item={item} />
             ))}
+        </div>
+        <div className="Pagination">
+          {currentPage > 1 ? (
+            <Button
+              className="ActivePagination"
+              onClick={() => setCurrentPage(currentPage - 1)}
+            >
+              Previouse
+            </Button>
+          ) : (
+            <Button
+              className="UnactivePagination"
+              data-disabled
+              sx={{ "&[data-disabled]": { pointerEvents: "all" } }}
+              onClick={(event) => event.preventDefault()}
+            >
+              Previouse
+            </Button>
+          )}
+          {nextPage !== 0 ? (
+            <Button
+              className="ActivePagination"
+              onClick={() => setCurrentPage(currentPage + 1)}
+            >
+              Next
+            </Button>
+          ) : (
+            <Button
+              className="UnactivePagination"
+              data-disabled
+              sx={{ "&[data-disabled]": { pointerEvents: "all" } }}
+              onClick={(event) => event.preventDefault()}
+            >
+              Next
+            </Button>
+          )}
         </div>
       </div>
     </div>
