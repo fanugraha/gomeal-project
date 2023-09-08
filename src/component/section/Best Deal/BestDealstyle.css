@@ -52,3 +52,19 @@
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
+
+@media (max-width: 992px) {
+  .DealTitle {
+    font: 700 20px/112% "Lato", sans-serif;
+    width: 170px;
+  }
+  .DealParagraph {
+    font: 500 16px/150% "Lato", sans-serif;
+    width: 170px;
+  }
+  .LeftCard {
+    padding: 28px;
+    width: 250px;
+    gap: 14px;
+  }
+}

@@ -33,3 +33,16 @@
   width: 252px;
   height: 64px;
 }
+
+@media (max-width: 992px) {
+  .BtnActive {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: var(--color-yellow, #f8b602);
+    border-radius: 16px;
+    padding: 12px 20px;
+    width: 200px;
+    height: 50px;
+  }
+}

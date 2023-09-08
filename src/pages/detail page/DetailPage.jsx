@@ -42,7 +42,7 @@ const DetailPage = () => {
           <div className="BtnDetail">
             <Button className="CuponBtn">
               <svg
-                class="coupon"
+                className="coupon"
                 width="28"
                 height="28"
                 viewBox="0 0 28 28"
@@ -54,9 +54,9 @@ const DetailPage = () => {
                   fill="white"
                 />
               </svg>
-              <p>Have a coupon code?</p>
+              <p>Have a coupon code?</p>xmlns
               <svg
-                class="chevron-down"
+                className="chevron-down"
                 width="28"
                 height="28"
                 viewBox="0 0 28 28"

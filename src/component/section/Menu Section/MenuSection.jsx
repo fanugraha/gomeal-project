@@ -22,7 +22,6 @@ const MenuSection = ({ deskripsi, type, onDetailChange }) => {
 
   const handleDetail = (id) => {
     onDetailChange(id);
-    console.log(id);
   };
 
   useEffect(() => {

@@ -3,3 +3,10 @@
   grid-template-columns: repeat(6, 1fr);
   gap: 16px;
 }
+
+@media (max-width: 1200px) {
+  .WrapperCategori {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

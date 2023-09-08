@@ -18,3 +18,13 @@
   width: 400px;
   text-align: center;
 }
+
+@media (max-width: 992px) {
+  .HeadlineFooter {
+    font: 900 26px/97.5% "Lato", sans-serif;
+    width: 350px;
+  }
+  .FoterContent {
+    height: 200px;
+  }
+}
