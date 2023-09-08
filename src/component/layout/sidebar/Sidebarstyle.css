@@ -19,7 +19,7 @@
 .Navigation li a {
   text-decoration: none;
   display: flex;
-  gap: 24px;
+  gap: 8px;
   align-items: center;
   color: var(--color-white, #a098ae);
   text-align: left;
@@ -36,4 +36,10 @@
   flex-direction: column;
   gap: 20px;
   padding: 0;
+}
+
+@media (max-width: 768px) {
+  .Sidebar {
+    display: none;
+  }
 }

@@ -9,6 +9,8 @@ import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import { Button } from "@mantine/core";
 import { useNavigate } from "react-router-dom";
 import CategorySection from "../../component/section/Category Section/CategorySection";
+import BestDeal from "../../component/section/Best Deal/BestDeal";
+import Footer from "../../component/section/Footer/Footer";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -23,13 +25,18 @@ const Homepage = () => {
 
   // handleClick
   const handleClick = () => {
-    // Navigasi ke halaman '/search' dengan mengirim searchTerm sebagai parameter URL
+    if (!searchTerm) return;
     navigate(`/products?menu=${searchTerm}`);
   };
 
-  // handlecategiry
-  const handleCategory = (beverage) => {
-    setCategory(beverage);
+  // handleCategory
+  const handleCategory = (event) => {
+    setCategory(event);
+  };
+
+  // detailProduct
+  const navigateDetail = (id) => {
+    navigate(`/products/${id}`);
   };
 
   return (
@@ -51,7 +58,10 @@ const Homepage = () => {
         <MenuSection
           type={category}
           deskripsi="Hungry? Our Menus Have You Covered!"
+          onDetailChange={navigateDetail}
         />
+        <BestDeal />
+        <Footer />
       </div>
     </div>
   );

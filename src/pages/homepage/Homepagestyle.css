@@ -1,6 +1,7 @@
 .Homepage {
   display: flex;
   width: 100%;
+  padding: 0;
 }
 
 .Content {
@@ -9,6 +10,8 @@
   gap: 40px;
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 h1 {
@@ -20,12 +23,6 @@ h1 {
   align-items: center;
   margin-top: 45px;
   justify-content: space-between;
-}
-
-.HeadlineTex {
-  color: var(--color-black, #2e2e2e);
-  text-align: left;
-  font: var(--heading-heading-1, 700 36px "Poppins", sans-serif);
 }
 
 .UserInput {
@@ -51,4 +48,51 @@ h1 {
   display: flex;
   gap: 16px;
   align-items: center;
+}
+
+@media (max-width: 1400px) {
+  .UserInput {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    gap: 20px;
+  }
+  .SearchBtn {
+    background: #f8b602 !important;
+    border-radius: 16px;
+    width: 120px;
+    height: 45px;
+  }
+  .HeadlineText {
+    font: var(--heading-heading-1, 600 20px "Poppins", sans-serif);
+  }
+}
+
+@media (max-width: 992px) {
+  .SearchBtn {
+    background: #f8b602 !important;
+    border-radius: 16px;
+    width: 120px;
+    height: 40px;
+  }
+
+  .HeadlineText {
+    font: var(--heading-heading-1, 600 16px "Poppins", sans-serif);
+  }
+  .SearchBtn {
+    background: #f8b602 !important;
+    border-radius: 16px;
+    width: 100px;
+    height: 40px;
+    font: var(--heading-heading-1, 600 12px "Poppins", sans-serif);
+  }
+  .UserInput {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .Content {
+    margin: 0 !important;
+  }
 }
