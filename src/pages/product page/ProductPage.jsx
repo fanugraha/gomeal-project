@@ -10,10 +10,9 @@ import ProductCard from "../../component/atom/card/product/ProductCard";
 const ProductPage = () => {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-
-  const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState(searchParams.get("menu"));
+  const [searchResults, setSearchResults] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [nextPage, setNextPage] = useState(1);
 
@@ -56,8 +55,8 @@ const ProductPage = () => {
 
   // Pagination
   const hanlePagination = () => {
-    if (!search) return;
-    setShowPagination(true);
+    if (!searchResults) return;
+    setShowPagination(false);
   };
 
   useEffect(() => {
@@ -100,44 +99,28 @@ const ProductPage = () => {
               ))}
           </div>
         )}
-        {showPagination ? (
+        {showPagination && (
           <div className="Pagination">
-            {currentPage > 1 ? (
-              <Button
-                className="ActivePagination"
-                onClick={() => setCurrentPage(currentPage - 1)}
-              >
-                Previouse
-              </Button>
-            ) : (
-              <Button
-                className="UnactivePagination"
-                data-disabled
-                sx={{ "&[data-disabled]": { pointerEvents: "all" } }}
-                onClick={(event) => event.preventDefault()}
-              >
-                Previouse
-              </Button>
-            )}
-            {nextPage !== 0 ? (
-              <Button
-                className="ActivePagination"
-                onClick={() => setCurrentPage(currentPage + 1)}
-              >
-                Next
-              </Button>
-            ) : (
-              <Button
-                className="UnactivePagination"
-                data-disabled
-                sx={{ "&[data-disabled]": { pointerEvents: "all" } }}
-                onClick={(event) => event.preventDefault()}
-              >
-                Next
-              </Button>
-            )}
+            <Button
+              className={`${
+                currentPage > 1 ? "ActivePagination" : "UnactivePagination"
+              }`}
+              onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+              disabled={currentPage <= 1}
+            >
+              Previous
+            </Button>
+            <Button
+              className={`${
+                nextPage !== 0 ? "ActivePagination" : "UnactivePagination"
+              }`}
+              onClick={() => nextPage !== 0 && setCurrentPage(currentPage + 1)}
+              disabled={nextPage === 0}
+            >
+              Next
+            </Button>
           </div>
-        ) : null}
+        )}
       </div>
     </div>
   );

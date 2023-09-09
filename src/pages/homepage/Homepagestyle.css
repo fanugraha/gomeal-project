@@ -104,6 +104,9 @@ h1 {
   .HeadlineText {
     font: var(--heading-heading-1, 600 24px "Poppins", sans-serif);
   }
+  .Header {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 575px) {
