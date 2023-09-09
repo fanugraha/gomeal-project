@@ -37,3 +37,13 @@
   width: 150px;
   height: 50px;
 }
+
+@media (max-width: 992px) {
+  .WrapperSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

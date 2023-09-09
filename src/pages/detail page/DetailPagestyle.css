@@ -108,3 +108,117 @@
   display: flex;
   gap: 50px;
 }
+
+@media (max-width: 1200px) {
+  .Details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  .DetailMenu {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .DeskripsiDetail {
+    width: 700px;
+  }
+  .RightDetail {
+    width: 700px;
+  }
+  .PriceDetail {
+    width: 700px;
+  }
+  .DetailRating {
+    width: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .DeskripsiDetail {
+    width: 600px;
+  }
+  .RightDetail {
+    width: 600px;
+  }
+  .BtnDetail {
+    gap: 30px;
+  }
+  .HeadlineDetail {
+    width: 600;
+  }
+  .PriceDetail {
+    width: 600px;
+  }
+  .DetailRating {
+    width: 400px;
+  }
+}
+
+@media (max-width: 767px) {
+  .DeskripsiDetail {
+    width: 500px;
+  }
+  .HeadlineDetail {
+    width: 500px;
+  }
+  .RightDetail {
+    width: 500px;
+  }
+  .PriceDetail {
+    width: 500px;
+  }
+  .DetailRating {
+    width: 400px;
+  }
+  .BtnDetail {
+    gap: 20px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 575px) {
+  .RightDetail {
+    width: 500px;
+  }
+  .HeadlineDetail {
+    width: 500px;
+  }
+}
+
+@media (max-width: 485px) {
+  .RightDetail {
+    width: auto;
+  }
+
+  .BtnDetail {
+    gap: 20px;
+  }
+  .DeskripsiDetail {
+    width: auto;
+  }
+  .HeadlineDetail {
+    width: auto;
+    font: 700 20px "Lato", sans-serif;
+  }
+  .LeftDetail {
+    width: auto;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+
+  .LeftDetail img {
+    width: 300px;
+    height: 300px;
+  }
+  .PriceDetail {
+    width: auto;
+  }
+  .DetailRating {
+    width: auto;
+  }
+}

@@ -7,6 +7,10 @@
 }
 
 .CategoryCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
   background: var(--color-white, #ffffff);
   border-radius: 16px;
@@ -46,5 +50,43 @@
   .CategoryCard {
     width: 215px;
     height: 130px;
+  }
+}
+
+@media (max-width: 767px) {
+  .CategoryCard {
+    width: 250px;
+  }
+}
+
+@media (max-width: 575px) {
+  .CategoryCard {
+    gap: 2px;
+    width: 90px;
+    height: 90px;
+  }
+  .CategoryCard img {
+    width: 30px;
+    height: 30px;
+  }
+  .TextCategory {
+    font: var(--text-text-regular-1, 400 12px "Poppins", sans-serif);
+    width: auto;
+  }
+}
+
+@media (max-width: 485px) {
+  .CategoryCard {
+    gap: 2px;
+    width: 70px;
+    height: 70px;
+  }
+  .CategoryCard img {
+    width: 24px;
+    height: 24px;
+  }
+  .TextCategory {
+    font: var(--text-text-regular-1, 400 12px "Poppins", sans-serif);
+    width: auto;
   }
 }
