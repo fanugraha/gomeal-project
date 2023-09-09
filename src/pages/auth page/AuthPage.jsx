@@ -42,8 +42,9 @@ const AuthPage = () => {
           </div>
         </Modal>
       )}
-      {authType === true && <LoginCard handleRegister={handleRegister} />}
-      {authType === false && (
+      {authType ? (
+        <LoginCard handleRegister={handleRegister} />
+      ) : (
         <RegisterCard handleLogin={handleLogin} openError={openError} />
       )}
     </div>
