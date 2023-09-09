@@ -32,11 +32,9 @@ const ProductPage = () => {
         setLoading(false);
         setCurrentPage(response?.data?.data?.currentPage);
         setNextPage(response?.data?.data?.nextPage);
-        setShowPagination(true);
       })
       .catch(() => {
         setLoading(false);
-        setShowPagination(false);
       });
   };
 
@@ -48,11 +46,18 @@ const ProductPage = () => {
   // HandleClick
   const handleClick = () => {
     // Panggil fungsi pencarian dengan searchInput
+    hanlePagination();
     searchMenu(search);
   };
 
   const handleDetail = (id) => {
     navigate(`/products/${id}`);
+  };
+
+  // Pagination
+  const hanlePagination = () => {
+    if (!search) return;
+    setShowPagination(true);
   };
 
   useEffect(() => {
@@ -95,9 +100,7 @@ const ProductPage = () => {
               ))}
           </div>
         )}
-
-        {/* Kondisi untuk menampilkan atau menyembunyikan Pagination */}
-        {showPagination && (
+        {showPagination ? (
           <div className="Pagination">
             {currentPage > 1 ? (
               <Button
@@ -134,7 +137,7 @@ const ProductPage = () => {
               </Button>
             )}
           </div>
-        )}
+        ) : null}
       </div>
     </div>
   );

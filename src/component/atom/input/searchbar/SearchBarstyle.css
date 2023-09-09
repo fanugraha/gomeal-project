@@ -42,3 +42,31 @@
     font: var(--text-text-regular-1, 400 10px "Poppins", sans-serif);
   }
 }
+
+@media (max-width: 767px) {
+  .SearchBar {
+    width: 180px;
+  }
+  .SearchBar img {
+    width: 24px;
+    height: 24px;
+  }
+  .SearchBar input {
+    width: 120px;
+    padding: 0;
+  }
+}
+
+@media (max-width: 428px) {
+  .SearchBar {
+    width: 160px;
+  }
+  .SearchBar img {
+    width: 24px;
+    height: 24px;
+  }
+  .SearchBar input {
+    width: 100px;
+    padding: 0;
+  }
+}

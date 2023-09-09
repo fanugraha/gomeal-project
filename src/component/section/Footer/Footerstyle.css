@@ -28,3 +28,13 @@
     height: 200px;
   }
 }
+
+@media (max-width: 992px) {
+  .HeadlineFooter {
+    font: 900 20px/97.5% "Lato", sans-serif;
+    width: auto;
+  }
+  .FoterContent {
+    height: 200px;
+  }
+}

@@ -15,3 +15,23 @@
     font: var(--heading-heading-1, 600 24px "Lato", sans-serif);
   }
 }
+
+@media (max-width: 575px) {
+  .WrapperProduct {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .WrapperProduct::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+@media (max-width: 485px) {
+  .Headline {
+    font: var(--text-text-regular-1, 600 16px "Lato", sans-serif);
+  }
+  .WrapperProduct {
+    margin-top: 16px;
+  }
+}

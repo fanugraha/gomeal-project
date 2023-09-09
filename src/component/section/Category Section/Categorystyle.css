@@ -10,3 +10,14 @@
     flex-wrap: wrap;
   }
 }
+
+@media (max-width: 575px) {
+  .WrapperCategori {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
+  .WrapperCategori::-webkit-scrollbar {
+    width: 0;
+  }
+}

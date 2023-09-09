@@ -155,3 +155,88 @@
     height: 290px;
   }
 }
+
+@media (max-width: 767px) {
+  .PopularCard {
+    width: 164px;
+    height: 220px;
+  }
+  .ImageWrapper {
+    width: 135px;
+    height: 95px;
+  }
+
+  .Rating {
+    width: 125px;
+  }
+
+  .Rating img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .TextFood {
+    font: 400 12px "Poppins", sans-serif;
+  }
+
+  .Price {
+    font: var(--heading-heading-3, 700 20px "Poppins", sans-serif);
+  }
+
+  .CardBody {
+    width: 125px;
+  }
+
+  .PromoProduct {
+    top: 10%;
+  }
+  .BtnPopularCard {
+    display: none;
+  }
+  .Price {
+    font: var(--heading-heading-3, 700 18px "Poppins", sans-serif);
+  }
+  .TextRating {
+    font: 400 14px "Poppins", sans-serif;
+  }
+  .PromoProduct {
+    width: 80px;
+    height: 25px;
+    border-radius: 0px 8px 8px 0px;
+    left: -0%;
+    top: 6%;
+    font: var(--text-text-regular-1, 400 14px "Poppins", sans-serif);
+  }
+}
+
+@media (max-width: 575px) {
+  .PopularCard {
+    flex: 0 0 auto;
+    width: 175px;
+    height: 220px;
+  }
+  .ImageWrapper {
+    width: 145px;
+    height: 95px;
+  }
+}
+
+@media (max-width: 485px) {
+  .PopularCard {
+    width: 145px;
+    height: 200px;
+  }
+  .ImageWrapper {
+    width: 125px;
+    height: 95px;
+  }
+  .CardBody {
+    width: 120px;
+  }
+  .Rating {
+    width: 120px;
+  }
+  .Price {
+    font: var(--heading-heading-3, 700 14px "Poppins", sans-serif);
+  }
+}
