@@ -1,0 +1,31 @@
+.NavbarDown {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 70px;
+  background-color: white;
+}
+
+.Navitem {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navitem a {
+  text-decoration: none;
+  margin: 0;
+  font: var(--text-text-medium-1, 500 18px "Poppins", sans-serif);
+  color: var(--color-white, #a098ae);
+}
+
+@media (max-width: 575px) {
+  .Navitem a {
+    font: var(--text-text-medium-1, 500 16px "Poppins", sans-serif);
+  }
+}

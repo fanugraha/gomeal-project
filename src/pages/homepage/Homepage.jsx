@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import CategorySection from "../../component/section/Category Section/CategorySection";
 import BestDeal from "../../component/section/Best Deal/BestDeal";
 import Footer from "../../component/section/Footer/Footer";
+import Navbar from "../../component/layout/navbar/Navbar";
 
 const Homepage = () => {
   const navigate = useNavigate();
@@ -62,6 +63,7 @@ const Homepage = () => {
         />
         <BestDeal />
         <Footer />
+        <Navbar />
       </div>
     </div>
   );

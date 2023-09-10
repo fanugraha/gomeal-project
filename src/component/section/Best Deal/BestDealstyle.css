@@ -86,6 +86,7 @@
     font: 500 12px/150% "Lato", sans-serif;
     width: 150px;
   }
+  .Deal {
+    gap: 16px;
+  }
 }
-
-

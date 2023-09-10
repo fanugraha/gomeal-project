@@ -6,6 +6,7 @@ import Sidebar from "../../component/layout/sidebar/Sidebar";
 import "./ProductPagestyle.css";
 import SearchBar from "../../component/atom/input/searchbar/SearchBar";
 import ProductCard from "../../component/atom/card/product/ProductCard";
+import Navbar from "../../component/layout/navbar/Navbar";
 
 const ProductPage = () => {
   const navigate = useNavigate();
@@ -121,6 +122,7 @@ const ProductPage = () => {
             </Button>
           </div>
         )}
+        <Navbar />
       </div>
     </div>
   );
