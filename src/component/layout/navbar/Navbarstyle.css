@@ -8,6 +8,7 @@
   justify-content: space-around;
   height: 70px;
   background-color: white;
+  visibility: hidden;
 }
 
 .Navitem {
@@ -24,7 +25,10 @@
   color: var(--color-white, #a098ae);
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
+  .NavbarDown {
+    visibility: visible;
+  }
   .Navitem a {
     font: var(--text-text-medium-1, 500 16px "Poppins", sans-serif);
   }

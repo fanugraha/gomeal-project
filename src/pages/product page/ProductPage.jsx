@@ -17,9 +17,6 @@ const ProductPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [nextPage, setNextPage] = useState(1);
 
-  // State untuk mengontrol apakah pagination harus ditampilkan atau disembunyikan
-  const [showPagination, setShowPagination] = useState(true);
-
   // Get Api Produk
   const searchMenu = (name = searchParams.get("menu")) => {
     setLoading(true);
@@ -45,19 +42,11 @@ const ProductPage = () => {
 
   // HandleClick
   const handleClick = () => {
-    // Panggil fungsi pencarian dengan searchInput
-    hanlePagination();
     searchMenu(search);
   };
 
   const handleDetail = (id) => {
     navigate(`/products/${id}`);
-  };
-
-  // Pagination
-  const hanlePagination = () => {
-    if (!searchResults) return;
-    setShowPagination(false);
   };
 
   useEffect(() => {
@@ -100,28 +89,26 @@ const ProductPage = () => {
               ))}
           </div>
         )}
-        {showPagination && (
-          <div className="Pagination">
-            <Button
-              className={`${
-                currentPage > 1 ? "ActivePagination" : "UnactivePagination"
-              }`}
-              onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
-              disabled={currentPage <= 1}
-            >
-              Previous
-            </Button>
-            <Button
-              className={`${
-                nextPage !== 0 ? "ActivePagination" : "UnactivePagination"
-              }`}
-              onClick={() => nextPage !== 0 && setCurrentPage(currentPage + 1)}
-              disabled={nextPage === 0}
-            >
-              Next
-            </Button>
-          </div>
-        )}
+        <div className="Pagination">
+          <Button
+            className={`${
+              currentPage > 1 ? "ActivePagination" : "UnactivePagination"
+            }`}
+            onClick={() => currentPage > 1 && setCurrentPage(currentPage - 1)}
+            disabled={currentPage <= 1}
+          >
+            Previous
+          </Button>
+          <Button
+            className={`${
+              nextPage !== 0 ? "ActivePagination" : "UnactivePagination"
+            }`}
+            onClick={() => nextPage !== 0 && setCurrentPage(currentPage + 1)}
+            disabled={nextPage === 0}
+          >
+            Next
+          </Button>
+        </div>
         <Navbar />
       </div>
     </div>
